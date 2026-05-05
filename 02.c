@@ -21,19 +21,19 @@ int main(void) {
 	double distance[SIZE];		//원점으로부터 거리
 	char ASCII = 65;
 
-	ReadFile(fp1, X, Y);
+	ReadFile(fp1, X, Y);	//01.txt읽어서 배열에 저장
 	fclose(fp1);
 
-	CalculateDistance(distance, X, Y);
+	CalculateDistance(distance, X, Y);	//원점으로부터 거리 계산
 
 	order(distance, X, Y);	//원점으로부터 거리를 오름차순으로 정렬
 
 	for (i = 0; i < SIZE; i++) {
-		insertWaypoint(L, ASCII, X[i], Y[i]);
+		insertWaypoint(L, ASCII, X[i], Y[i]);	//연결리스트에 좌표 저장
 		ASCII++;
 	}
-	printWaypoint(L, fp2);
-	freeWaypoint_h(L);
+	printWaypoint(L, fp2);	//연결리스트 출력
+	freeWaypoint_h(L);	//연결리스트 free
 	
 	fclose(fp2);
 	system("notepad.exe 02.txt");
