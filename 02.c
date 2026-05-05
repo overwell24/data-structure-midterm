@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "InsertLinkedList.h"
+#include "InsertWaypoint.h"
 #define SIZE 5	//배열의 크기
 #define MAX 1000	//최대 좌표
 
@@ -11,8 +11,8 @@ void CalculateDistance(double* d, int* x, int* y);	//원점으로부터 거리 계산
 void order(double* d, int* x, int* y);	//원점으로부터 거리를 오름차순으로 정렬
 
 int main(void) {
-	linkedList_h* L;
-	L = createLinkedList_h();
+	linkedWaypoint_h* L;
+	L = createWaypoint_h();
 	FILE* fp1 = fopen("01.txt", "r");
 	FILE* fp2 = fopen("02.txt", "a+");
 
@@ -34,7 +34,7 @@ int main(void) {
 		ASCII++;
 	}
 	printList(L, fp2);
-	freeLinkedList_h(L);
+	freeWaypoint_h(L);
 	
 	fclose(fp2);
 	system("notepad.exe 02.txt");

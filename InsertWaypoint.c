@@ -1,17 +1,17 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-#include "InsertLinkedList.h"
+#include "InsertWaypoint.h"
 // 공백 연결 리스트를 생성하는 연산
-linkedList_h* createLinkedList_h(void) {
-	linkedList_h* L;
-	L = (linkedList_h*)malloc(sizeof(linkedList_h));
+linkedWaypoint_h* createLinkedList_h(void) {
+	linkedWaypoint_h* L;
+	L = (linkedWaypoint_h*)malloc(sizeof(linkedWaypoint_h));
 	L->head = NULL;		// 공백 리스트이므로 NULL로 설정
 	return L;
 }
 
 // 연결 리스트의 전체 메모리를 해제하는 연산
-void freeLinkedList_h(linkedList_h* L) {
+void freeWaypoint_h(linkedWaypoint_h* L) {
 	Waypoint* p;
 	while (L->head != NULL) {
 		p = L->head;
@@ -22,7 +22,7 @@ void freeLinkedList_h(linkedList_h* L) {
 }
 
 // 연결 리스트를 순서대로 출력하는 연산
-void printList(linkedList_h* L, FILE* fp) {
+void printList(linkedWaypoint_h* L, FILE* fp) {
 	Waypoint* p;
 	p = L->head;
 	while (p != NULL) {
@@ -37,7 +37,7 @@ void printList(linkedList_h* L, FILE* fp) {
 }
 
 // 마지막 노드로 삽입하는 연산 
-void insertLastNode(linkedList_h* L, char c, int x, int y) {
+void insertWaypoint(linkedWaypoint_h* L, char c, int x, int y) {
 	Waypoint* newNode;
 	Waypoint* temp;
 	newNode = (Waypoint*)malloc(sizeof(Waypoint));
