@@ -26,13 +26,9 @@ void printWaypoint(linkedWaypoint_h* L, FILE* fp) {
 	Waypoint* p;
 	p = L->head;
 	while (p != NULL) {
-		fprintf(stdout, "%c\t %d\t %d", p->Name, p->X, p->Y);
-		fprintf(fp, "%c\t %d\t %d", p->Name, p->X, p->Y);
+		fprintf(stdout, "%c\t %d\t %d\n", p->Name, p->X, p->Y);
+		fprintf(fp, "%c\t %d\t %d\n", p->Name, p->X, p->Y);
 		p = p->link;
-		if (p != NULL) {
-			fprintf(stdout, "\n");
-			fprintf(fp, "\n");
-		}
 	}
 }
 
