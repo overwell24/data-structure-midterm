@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #define SIZE 5	//배열의 크기
-#define MAX 1000	//최대 좌표
+#define MAX 300	//최대 좌표
 
 void random(int* x, int* y, int size);	//난수 입력
 void printXY(FILE* f, int* x, int* y, int size);	//좌표 출력
@@ -18,8 +18,8 @@ int main(void) {
 	X[0] = 0;	//시작점 고정
 	Y[0] = 0;	//시작점 고정
 
-	random(X, Y, SIZE);
-	printXY(fp, X, Y, SIZE);
+	random(X, Y, SIZE);	//랜덤 좌표 입력
+	printXY(fp, X, Y, SIZE);	//랜덤 좌표 출력
 
 	fclose(fp);
 	system("notepad.exe 01.txt");
