@@ -28,17 +28,19 @@ void printPath(linkedPath_h* L, FILE* fp) {
 	p = L->head;
 	double Msum = 0, Bsum = 0;
 
-	fprintf(stdout, "구간\t 거리(m)\t k\t 배터리 소모\n");
-	fprintf(fp, "구간\t 거리(m)\t k\t 배터리 소모\n");
+	fprintf(stdout, "%-10s\t %-10s\t %-10s\t %-10s\n", "구간", "거리(m)", "k", "배터리 소모");
+	fprintf(fp, "%-10s\t %-10s\t %-10s\t %-10s\n", "구간", "거리(m)", "k", "배터리 소모");
+	//fprintf(fp, "구간\t 거리(m)\t k\t 배터리 소모\n");
 	while (p != NULL) {
-		fprintf(stdout, "%s\t %.1lf\t\t %.1lf\t %.1lf\n", p->Section, p->Meter, p->K, p->Consumption);
-		fprintf(fp, "%s\t %.1lf\t %.1lf\t %.1lf\n", p->Section, p->Meter, p->K, p->Consumption);
+		fprintf(stdout, "%-10s\t %-10.1lf\t %-10.1lf\t %-10.1lf\n", p->Section, p->Meter, p->K, p->Consumption);
+		//fprintf(fp, "%s\t %.1lf\t\t %.1lf\t %.1lf\n", p->Section, p->Meter, p->K, p->Consumption);
+		fprintf(fp, "%-10s\t %-10.1lf\t %-10.1lf\t %-10.1lf\n", p->Section, p->Meter, p->K, p->Consumption);
 		Msum += p->Meter;
 		Bsum += p->Consumption;
 		p = p->link;
 	}
-	fprintf(stdout, "Total\t %.1lf\t\t -\t %.1lf\n", Msum, Bsum);
-	fprintf(fp, "Total\t %.1lf\t -\t %.1lf\n", Msum, Bsum);
+	fprintf(stdout, "%-10s\t %-10.1lf\t %-10s\t %-10.1lf\n", "Total", Msum, "-", Bsum);
+	fprintf(fp, "%-10s\t %-10.1lf\t %-10s\t %-10.1lf\n", "Total", Msum, "-", Bsum);
 }
 
 

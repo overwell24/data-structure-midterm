@@ -9,7 +9,7 @@
 
 void ReadWaypoint(linkedWaypoint_h* L, FILE* fp);	//파일 읽어서 Waypoint 입력
 double Calculate(int x1, int x2, int y1, int y2);	//점과 점 사이 거리 계산
-void Insert(linkedWaypoint_h* L1, linkedPath_h* L2);
+void Insert(linkedWaypoint_h* L1, linkedPath_h* L2); //거리 및 배터리 소모 연결리스트 저장
 
 int main(void) {
 	linkedWaypoint_h* L1;
@@ -20,13 +20,14 @@ int main(void) {
 	FILE* fp2 = fopen("02.txt", "r");
 	FILE* fp3 = fopen("03.txt", "a+");
 	
-	ReadWaypoint(L1, fp2);
+	ReadWaypoint(L1, fp2);	//파일 읽어서 Waypoint입력
 	fclose(fp2);
 
-	Insert(L1, L2);
-	freeWaypoint_h(L1);
+	Insert(L1, L2);	//거리 및 배터리 소모 연결리스트 저장
+	freeWaypoint_h(L1);	//Waypoint free
 
-	printPath(L2, fp3);
+	printPath(L2, fp3);	//거리 및 배터리 소모량 출력
+	freePath_h(L2);	//Path free
 
 	fclose(fp3);
 	system("notepad.exe 03.txt");
@@ -51,7 +52,7 @@ double Calculate(int x1, int x2, int y1, int y2) {	//점과 점 사이 거리 계산
 	//sqrt는 math.h에 있는 루트함수
 }
 
-void Insert(linkedWaypoint_h* L1, linkedPath_h* L2) {
+void Insert(linkedWaypoint_h* L1, linkedPath_h* L2) {	//거리 및 배터리 소모 연결리스트 저장
 	Waypoint* p;
 	double d, k;
 	char section[3];
