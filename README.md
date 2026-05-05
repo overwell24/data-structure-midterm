@@ -1,6 +1,7 @@
 # 자료 구조 수시 고사1
 ## 시험 문제
 <img width="4284" height="5712" alt="KakaoTalk_20260506_071854298" src="https://github.com/user-attachments/assets/a9ae680e-3159-46f6-b4f9-55dd0dc0e52d" />
+
 ## 회고록
 - ...
 - ...
