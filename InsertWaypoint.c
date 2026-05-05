@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "InsertWaypoint.h"
 // 공백 연결 리스트를 생성하는 연산
-linkedWaypoint_h* createLinkedList_h(void) {
+linkedWaypoint_h* createWaypoint_h(void) {
 	linkedWaypoint_h* L;
 	L = (linkedWaypoint_h*)malloc(sizeof(linkedWaypoint_h));
 	L->head = NULL;		// 공백 리스트이므로 NULL로 설정
@@ -22,7 +22,7 @@ void freeWaypoint_h(linkedWaypoint_h* L) {
 }
 
 // 연결 리스트를 순서대로 출력하는 연산
-void printList(linkedWaypoint_h* L, FILE* fp) {
+void printWaypoint(linkedWaypoint_h* L, FILE* fp) {
 	Waypoint* p;
 	p = L->head;
 	while (p != NULL) {

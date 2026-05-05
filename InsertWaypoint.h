@@ -13,5 +13,5 @@ typedef struct {
 
 linkedWaypoint_h* createWaypoint_h(void);
 void freeWaypoint_h(linkedWaypoint_h* L);
-void printList(linkedWaypoint_h* L, FILE* fp);
+void printWaypoint(linkedWaypoint_h* L, FILE* fp);
 void insertWaypoint(linkedWaypoint_h* L, char c, int x, int y);

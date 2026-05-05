@@ -4,7 +4,6 @@
 #include <math.h>
 #include "InsertWaypoint.h"
 #define SIZE 5	//배열의 크기
-#define MAX 1000	//최대 좌표
 
 void ReadFile(FILE* fp, int* x, int* y);	//파일 읽어서 좌표 입력
 void CalculateDistance(double* d, int* x, int* y);	//원점으로부터 거리 계산
@@ -30,10 +29,10 @@ int main(void) {
 	order(distance, X, Y);	//원점으로부터 거리를 오름차순으로 정렬
 
 	for (i = 0; i < SIZE; i++) {
-		insertLastNode(L, ASCII, X[i], Y[i]);
+		insertWaypoint(L, ASCII, X[i], Y[i]);
 		ASCII++;
 	}
-	printList(L, fp2);
+	printWaypoint(L, fp2);
 	freeWaypoint_h(L);
 	
 	fclose(fp2);
