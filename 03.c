@@ -5,6 +5,7 @@
 #include <math.h>
 #include "InsertWaypoint.h"
 #include "InsertPath.h"
+#define SIZE 5	//배열의 크기
 
 void ReadWaypoint(linkedWaypoint_h* L, FILE* fp);	//파일 읽어서 Waypoint 입력
 double Calculate(int x1, int x2, int y1, int y2);	//점과 점 사이 거리 계산
